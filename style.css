@@ -1,0 +1,115 @@
+html, body, .map-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+#map {
+  width: 100%;
+  height: calc(100% - 54px);
+  margin-top: 54px;
+}
+
+.leaflet-container {
+  background: #fff;
+}
+
+.navbar .navbar-brand,  .navbar .navbar-inner {
+  padding: 10px 30px 10px 15px;
+}
+
+.navbar a.navbar-brand {
+  padding: 0 20px;
+  line-height: 30px;
+  height: 30px;
+  color: #555;
+  font-weight: bold;
+  /* letter-spacing: 1px; */
+  font-size: 19px;
+}
+
+.absolute-right {
+  position: absolute;
+  right: 17px;
+  top: 6px;
+  width: 330px;
+}
+
+/**
+ ASIDE
+**/
+
+.aside {
+  width: 350px;
+  margin-top: 50px;
+}
+
+.aside .aside-dialog .aside-body {
+  padding: 15px;
+}
+
+.aside-body h3, .aside-body h4 {
+  margin: 15px 0 5px;
+}
+
+.aside-body h3 a, .aside-body h4 a {
+/*  font-size: 85%;
+  color: #000;*/
+}
+
+.aside-body .items div {
+  padding: 2px 4px;
+}
+
+.aside-body .items div:hover {
+  cursor: pointer;
+  background: #e7e7e7;
+}
+
+
+.aside .aside-dialog .aside-header {
+  background: #e7e7e7;
+  color: #333;
+  height: 50px;
+  padding: 12px 15px;
+}
+
+.aside .aside-dialog .aside-header a {
+/*  color: #333;
+  margin-right: 5px;*/
+}
+
+.aside .aside-dialog .aside-header h3 {
+  margin: 0;
+  display: inline-block;
+  float: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: calc(100% - 60px);
+}
+
+.aside .aside-dialog .aside-header .close {
+  padding: 0;
+  margin-right: 0;
+  margin-top: -5px;
+}
+
+.alert {
+  width: 300px;
+}
+
+#footer {
+  height: 40px;
+  width: 100%;
+  background-color: rgba(255,255,255,.7);
+  position: absolute;
+  bottom: 0;
+}
+
+#footer .container > div {
+  padding-top: 11px;
+}

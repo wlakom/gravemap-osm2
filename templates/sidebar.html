@@ -1,0 +1,27 @@
+<div class="aside" tabindex="-1" role="dialog">
+  <div class="aside-dialog">
+    <div class="aside-content">
+      <div class="aside-body aside-header">
+        <h3></h3>
+        <span class="pull-right">
+          <a href="http://osm.org/{{active.type}}/{{active.id}}" target="_blank"><i class="fa fa-chain"></i></a>
+          <button class="btn btn-default btn-sm" ng-click="closeGrave();$hide()"><i class="fa fa-times"></i></button>
+        </span>
+      </div>    
+      
+      <div class="aside-body">
+          <div class="aside-section aside-tags" ng-show="active.tags.commons">
+            <img ng-src="//commons.wikimedia.org/w/thumb.php?f={{active.tags.commons.substring(5)}}&w=300" alt="Zdjęcie grobu">
+          </div>
+        
+          <div class="aside-section aside-tags">
+            <div ng-repeat="person in active.people">
+              <h3 ng-hide="person.tags.wikipedia">{{person.name}}</h3>
+              <h3 ng-show="person.tags.wikipedia"><a href="//en.wikipedia.org/wiki/{{person.tags.wikipedia}}" target="_blank">{{person.name}}</a></h3>
+              <div>{{person.tags.born ? person.tags.born : '??'}} &mdash; {{person.tags.died ? person.tags.died : '??'}}</div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
