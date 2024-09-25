@@ -10,14 +10,32 @@
       </div>    
       
       <div class="aside-body">
-          <div class="aside-section aside-tags" ng-show="active.tags.commons">
-            <img ng-src="//commons.wikimedia.org/w/thumb.php?f={{active.tags.commons.substring(5)}}&w=300" alt="Zdjęcie grobu">
+      </div>
+          <h3>Informacje</h3>
+          <div class="aside-section aside-tags">
+            <div><a href="{{active.tags.image}}" ng-show="active.tags.image">Zdjęcie grobu</a></div>
+            <div ng-show="active.tags.commons">
+              <img ng-src="https://commons.wikimedia.org/w/thumb.php?f={{active.tags.commons.substring(5)}}&w=300" alt="Zdjęcie grobu">
+            </div>
+            <div ng-show="active.tags.wikipedia_commons">
+              <img ng-src="https://commons.wikimedia.org/w/thumb.php?f={{active.tags.wikipedia_commons.substring(5)}}&w=300" alt="Zdjęcie grobu">
+            </div>
+            <div ng-show="active.tags['sector:name'] || active.tags['sector:place'] || active.tags['sector:row']">Lokalizacja:
+              <i ng-show="active.tags['sector:name']">{{active.tags['sector:name']}}</i>
+              <i ng-show="active.tags['sector:place']">{{active.tags['sector:place']}}</i>
+              <i ng-show="active.tags['sector:row']">{{active.tags['sector:row']}}</i>
+            </div>
+            <div ng-show="active.tags['ref']">Numer referencyjny: {{active.tags['ref']}}</div>
+            <div ng-show="active.tags.description"><i>{{person.tags.description}}</i></div>
+            
           </div>
-        
+          <hr/>
           <div class="aside-section aside-tags">
             <div ng-repeat="person in active.people">
               <h3 ng-hide="person.tags.wikipedia">{{person.name}}</h3>
-              <h3 ng-show="person.tags.wikipedia"><a href="//en.wikipedia.org/wiki/{{person.tags.wikipedia}}" target="_blank">{{person.name}}</a></h3>
+              <h3 ng-show="person.tags.wikipedia"><a href="https://en.wikipedia.org/wiki/{{person.tags.wikipedia}}" target="_blank">{{person.name}}</a></h3>
+              <div ng-show="person.tags.family_name">Nazwisko rodowe: {{person.tags.family_name}}</div>
+              <div ng-show="person.tags.description"><i>{{person.tags.description}}</i></div>
               <div>{{person.tags.born ? person.tags.born : '??'}} &mdash; {{person.tags.died ? person.tags.died : '??'}}</div>
             </div>
           </div>
