@@ -59,7 +59,7 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', function($scop
       $http({
         method: 'GET',
         dataType: 'json',
-        url: 'http://nominatim.openstreetmap.org/search/?q=' + encodeURIComponent($scope.searchText) + '&format=json'
+        url: 'http://nominatim.openstreetmap.org/search?q=' + encodeURIComponent($scope.searchText) + '&format=json'
       }).
               success(function(data) {
                 $scope.busy = false;
