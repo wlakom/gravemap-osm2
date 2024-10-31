@@ -9,7 +9,7 @@ app.config(['$asideProvider', function($asideProvider) {
   }
 ]);
 
-app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', function($scope, $http, $aside, $alert) {
+app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', '$modal', function($scope, $http, $aside, $alert, $modal) {
 
     $scope.busy = false;
     $scope.static = {
@@ -33,6 +33,12 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', function($scop
     aside.isOpen = function() {
       return document.querySelector(".aside") === null ? false : true;
     };
+    var modal = $modal({
+      content: '',
+      template: "templates/search.html",
+      scope: $scope,
+      show: false
+    });
 
     /**
      * Init map
@@ -79,7 +85,9 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', function($scop
 
     ////////////////////////////////////////////////////////////////// LOADING AND PARSING DATA ////
     ////////////////////////////////////////////////////////////////////////////////////////////////
-
+    $scope.loadDataPopup = function() {
+      modal.show();
+    }
     /**
      * Loading data from overpass API
      * @returns {void}
@@ -104,6 +112,35 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', function($scop
                 $scope.busy = false;
                 alert(data);
               });
+    };
+
+    $scope.loadDataAdv = function(name) {
+      var b = $scope.map.getBounds();
+      var bbox = '(' + b.getSouthEast().lat + ',' + b.getNorthWest().lng + ',' +
+              b.getNorthWest().lat + ',' + b.getSouthEast().lng + ')';
+
+      $scope.busy = true;
+      const query = '[out:json];(rel[name~"'+ name +'"][type="person"]' + bbox + ';rel[family_name~"'+ name +'"][type="person"]' + bbox + ';);>>; out;';
+      console.log(query);
+      $http({
+        method: 'GET',
+        dataType: 'jsonp',
+        url: $scope.static.api + encodeURIComponent(query)
+
+      }).
+              success(function(data) {
+                $scope.busy = false;
+                $scope.parseData(data.elements);
+              }).
+              error(function(data, status) {
+                $scope.busy = false;
+                alert(data);
+              });
+    };
+
+    $scope.searchGraves = function(a, b,c) {
+      // FIXME: Why is model not working here?
+      $scope.loadDataAdv($('#searchName').val());
     };
 
     /**
