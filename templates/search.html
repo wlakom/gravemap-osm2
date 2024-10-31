@@ -1,0 +1,26 @@
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="aside-dialog">
+    <div class="aside-content">
+      <div class="aside-body aside-header">
+        <h3></h3>
+        <span class="pull-right">
+          <button class="btn btn-default btn-sm" ng-click="$hide()"><i class="fa fa-times"></i></button>
+        </span>
+      </div>    
+      
+      <div class="aside-body">
+      </div>
+          <h3>Zaawansowana wyszukiwarka</h3>
+          <hr/>
+          <form ng-submit="searchGraves()">
+            <div class="input-group">
+              Nazwisko: <input id="searchName" type="text" class="form-control" ng-model="searchGrave.nameText" placeholder="nazwisko">
+              
+              <input type="submit" id="submit" class="btn btn-default" value="Szukaj" />
+              
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
