@@ -1,4 +1,6 @@
-gravemap
+gravefinder-osm
 ========
 
-Grave map based on OpenStreetMap data
+OpenStreetMap Grave Finder
+
+(Wyszukiwarka grobów na OpenSreetMap)

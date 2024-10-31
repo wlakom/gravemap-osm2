@@ -1,7 +1,7 @@
 html, body, .map-container {
   height: 100%;
   overflow: hidden;
-}
+ }
 
 a:hover {
   text-decoration: none;
@@ -19,6 +19,7 @@ a:hover {
 
 .navbar .navbar-brand,  .navbar .navbar-inner {
   padding: 10px 30px 10px 15px;
+     background: #e0e0f7;
 }
 
 .navbar a.navbar-brand {
@@ -36,6 +37,7 @@ a:hover {
   right: 17px;
   top: 6px;
   width: 330px;
+
 }
 
 /**
@@ -45,6 +47,7 @@ a:hover {
 .aside {
   width: 350px;
   margin-top: 50px;
+  background-color: #e0e0f7;
 }
 
 .aside .aside-dialog .aside-body {
@@ -62,13 +65,13 @@ a:hover {
 
 .aside-body .items div {
   padding: 2px 4px;
+      background-color: red;
 }
 
 .aside-body .items div:hover {
   cursor: pointer;
   background: #e7e7e7;
 }
-
 
 .aside .aside-dialog .aside-header {
   background: #e7e7e7;
@@ -125,7 +128,7 @@ a:hover {
 #footer {
   height: 40px;
   width: 100%;
-  background-color: rgba(255,255,255,.7);
+ background-color: rgba(255,255,255,.7);
   position: absolute;
   bottom: 0;
 }

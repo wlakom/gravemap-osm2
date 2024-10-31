@@ -2,7 +2,7 @@
 <html lang="pl" ng-app="GraveApp">
   <head>
     <meta charset="UTF-8">
-    <title>MapaGrobów.pl</title>    
+    <title>Wyszukiwarka grobów na OSM</title>    
     <link rel="stylesheet" href="lib/leaflet-0.7.3/leaflet.css" />
     <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="lib/bootstrap/bootstrap-additions.min.css">
@@ -16,11 +16,11 @@
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-inner">
-          <a class="navbar-brand" href=".">MAPA GROBÓW <sup>&beta;</sup></a>
+          <a class="navbar-brand" href=".">Wyszukiwarka grobów na <abbr title="OpenStreetMap">OSM</abbr><sup>&beta;</sup></a>
           <a class="btn btn-primary btn-sm" ng-click="loadData()">Załaduj groby z obszaru</a>
           <a class="btn btn-primary btn-sm" ng-click="loadDataPopup()">Zaawansowane ładowanie danych</a>
           <span ng-show="busy" style="margin-left: 10px;">
-            <i class="fa fa-refresh fa-spin"></i> Wczytywanie...
+            <i class="fa fa-refresh fa-spin" backgroung=red></i> Wczytywanie...
           </span>
           <div class="absolute-right">
             <form ng-submit="search()">
@@ -40,7 +40,7 @@
     </div>
     <div id="footer">
       <div class="container">
-        <div class="text-muted pull-left"><small>© 2014</small> <a href="https://github.com/yarl">Yarl</a>. 2024 <a href="https://github.com/dotevo">Dotevo</a> & contributors. Podkład mapowy autorstwa OpenStreetMap, lic. <a href="http://www.openstreetmap.org/copyright">CC-By-SA</a>.</div>
+        <div class="text-muted pull-left"><small>© 2014</small> <a href="https://github.com/yarl">Yarl</a>. 2024 <a href="https://github.com/dotevo">Dotevo</a>. 2024 <a href="https://github.com/wlakom">Wlakom</a> & contributors. Podkład mapowy autorstwa OpenStreetMap, lic. <a href="http://www.openstreetmap.org/copyright">CC-By-SA</a>.</div>
       </div>
     </div>
 
