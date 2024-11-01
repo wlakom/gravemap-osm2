@@ -15,7 +15,7 @@
                <ng-show="active.tags['name']"><h3><i> {{active.tags['name']}}</i></h3> 
            <div class="aside-section aside-tags">
              
-             <div ng-show="active.tags['wikimedia_commons']">sdfs
+             <div ng-show="active.tags['wikimedia_commons']">
              <img ng-src="https://commons.wikimedia.org/w/thumb.php?f={{active.tags['wikimedia_commons'].substring(5)}}&w=300" alt="Zdjęcie grobu">
              </div>
              
@@ -33,7 +33,7 @@
               <div ng-show="active.tags['sector:place']">- Miejsce: <i>{{active.tags['sector:place']}}</i></div>
             </div>
             <div ng-show="active.tags['ref']">Numer referencyjny: {{active.tags['ref']}}</div>
-            <div ng-show="active.tags.description"><i>{{person.tags.description}}</i></div>
+            <div ng-show="active.tags.description"><i>{{active.tags.description}}</i></div>
             
           </div>
           <hr/>
@@ -48,12 +48,12 @@
               <img ng-src="{{person.tags['image']}}" alt="Zdjęcie zmarłego">
             </div>
               
-               <div ng-show="person.tags['wikimedia_commons']">sdfs
+               <div ng-show="person.tags['wikimedia_commons']">
               <img ng-src="https://commons.wikimedia.org/w/thumb.php?f={{person.tags['wikimedia_commons'].substring(5)}}&w=200" alt="Zdjęcie zmarłego z Wikimedii">
             </div>
               
              <div ng-show="person.tags.flickr">
-             <img ng-src="{{active.tags['flickr']}}" alt="Zdjęcie zmarłego z Flickr"> 
+             <img ng-src="{{person.tags['flickr']}}" alt="Zdjęcie zmarłego z Flickr"> 
              </div>
               
              <div ng-show="person.tags.image">
