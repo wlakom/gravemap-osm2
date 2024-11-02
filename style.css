@@ -136,3 +136,8 @@ a:hover {
 #footer .container > div {
   padding-top: 11px;
 }
+
+
+.tooltip {
+  font-size:12px;
+}

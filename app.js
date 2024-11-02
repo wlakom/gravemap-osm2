@@ -50,7 +50,7 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', '$modal', func
         zoom: 7,
         layers: [new L.tileLayer($scope.static.background, {
             attributionControl: false,
-            maxZoom: 21,
+            maxZoom: 23,
             maxNativeZoom: 19,
             opacity: .8
           }), $scope.graves.layer]
@@ -239,7 +239,7 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', '$modal', func
 
       var grave = $scope.graves.data[id];
       if (grave.type === "node") {
-        L.marker(grave.latlng, {})
+        var marker = L.marker(grave.latlng, {})
                 .on('click', function() {
                   $scope.active = $scope.graves.data[id];
                   $scope.openGrave();
@@ -247,9 +247,12 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', '$modal', func
                   console.log($scope.active);
                 })
                 .addTo($scope.graves.layer);
+                console.log(marker);
+        if ($scope.graves.data[id].tags.name)
+          marker.bindTooltip($scope.graves.data[id].tags.name, {permanent: true, className: "tooltip", offset: [0, 0] });
       }
       else if (grave.type === "way") {
-        L.polygon(grave.latlngs, {})
+        var polygon = L.polygon(grave.latlngs, {})
                 .on('click', function() {
                   $scope.active = $scope.graves.data[id];
                   $scope.openGrave();
