@@ -249,7 +249,7 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', '$modal', func
                 .addTo($scope.graves.layer);
                 console.log(marker);
         if ($scope.graves.data[id].tags.name)
-          marker.bindTooltip($scope.graves.data[id].tags.name, {permanent: true, className: "tooltip", offset: [0, 0] });
+          marker.bindTooltip($scope.graves.data[id].tags.name, {className: "tooltip", offset: [0, 0] });
       }
       else if (grave.type === "way") {
         var polygon = L.polygon(grave.latlngs, {})
