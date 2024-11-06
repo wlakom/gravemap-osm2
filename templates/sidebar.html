@@ -43,9 +43,8 @@
               <h4 ng-show="person.tags.wikipedia"><b></b><a href="https://en.wikipedia.org/wiki/{{person.tags.wikipedia}}" target="_blank">{{person.name}}</a></b></h4>
               <div ng-show="person.tags.family_name">Nazwisko rodowe: {{person.tags.family_name}}</div>
               
-             <div><a href="{{person.tags['image']}}" ng-show="person.tags['image']">Zdjęcie zmarłego - {{person.tags['image']}}</a></div>
               <div ng-show="person.tags['image']">
-              <img ng-src="{{person.tags['image']}}" alt="Zdjęcie zmarłego">
+              <img ng-src="{{person.tags['image']}}" alt="Zdjęcie zmarłego" width="300">
             </div>
               
                <div ng-show="person.tags['wikimedia_commons']">
