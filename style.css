@@ -9,23 +9,24 @@ a:hover {
 
 #map {
   width: 100%;
-  height: calc(100% - 54px);
-  margin-top: 54px;
+  height: calc(100% - 90px);
+  margin-top: 90px;
 }
 
 .leaflet-container {
-  background: #fff;
+  background: white;
 }
 
 .navbar .navbar-brand,  .navbar .navbar-inner {
-  padding: 10px 30px 10px 15px;
+  padding: 10px 30px 30px 15px;
      background: #e0e0f7;
+     color: red;
 }
 
 .navbar a.navbar-brand {
-  padding: 0 20px;
-  line-height: 30px;
-  height: 30px;
+  padding: 0 40px;
+  line-height: 20px;
+  height: 10px;
   color: #555;
   font-weight: bold;
   /* letter-spacing: 1px; */
@@ -46,7 +47,7 @@ a:hover {
 
 .aside {
   width: 350px;
-  margin-top: 50px;
+  margin-top: 80px;
   background-color: #e0e0f7;
 }
 
