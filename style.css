@@ -41,6 +41,10 @@ a:hover {
 
 }
 
+.btn-primary {
+backgroud-color: ##87CEEB;
+}
+
 /**
  ASIDE
 **/
@@ -82,8 +86,8 @@ a:hover {
 }
 
 .aside .aside-dialog .aside-header a {
-/*  color: #333;
-  margin-right: 5px;*/
+  background: ##5F9EA0;
+  margin-right: 5px;
 }
 
 .aside .aside-dialog .aside-header h3 {
