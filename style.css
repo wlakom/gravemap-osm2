@@ -42,7 +42,8 @@ a:hover {
 }
 
 .btn-primary {
-backgroud-color: ##87CEEB;
+  background: #4682B4;
+  width: 150px;
 }
 
 /**
