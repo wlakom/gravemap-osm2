@@ -47,7 +47,7 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', '$modal', func
     $scope.initMap = function() {
       $scope.map = L.map('map', {
         center: [52, 19.5],
-        zoom: 7,
+        zoom: 6,
         layers: [new L.tileLayer($scope.static.background, {
             attributionControl: false,
             maxZoom: 23,
@@ -73,8 +73,8 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', '$modal', func
                 if (data.length > 0) {
                   var item = data[0];
                   $scope.map.setView([item.lat, item.lon]);
-                  if ($scope.map.getZoom() < 15)
-                    $scope.map.setZoom(15);
+                  if ($scope.map.getZoom() < 14)
+                    $scope.map.setZoom(14);
                 }
               }).
               error(function(data, status) {
