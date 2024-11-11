@@ -27,10 +27,18 @@
                 <input type="text" class="form-control" ng-model="searchText" placeholder="place">
                 <span class="input-group-btn">
                   <input type="submit" id="submit" class="btn btn-primary" value="Search by place" /><br>
-                  <a class="btn btn-primary" ng-click="loadDataPopup()">Search by last name</a>
                 </span>
               </div>
             </form>
+            <form ng-submit="searchGraves()">
+            <div class="input-group">
+               <input id="searchName" type="text" class="form-control" ng-model="searchGrave.nameText" placeholder="name">
+                  <span class="input-group-btn">
+               <input type="submit" id="submit" class="btn btn-primary" value="SSearch by name" />
+                  </span>
+            </div>
+          </form>
+
           </div>
         </div>
       </div>
