@@ -73,8 +73,8 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', '$modal', func
                 if (data.length > 0) {
                   var item = data[0];
                   $scope.map.setView([item.lat, item.lon]);
-                  if ($scope.map.getZoom() < 14)
-                    $scope.map.setZoom(14);
+                  if ($scope.map.getZoom() < 13)
+                    $scope.map.setZoom(13);
                 }
               }).
               error(function(data, status) {
