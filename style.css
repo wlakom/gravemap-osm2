@@ -19,12 +19,12 @@ a:hover {
 
 .navbar .navbar-brand,  .navbar .navbar-inner {
   padding: 10px 30px 30px 15px;
-     background: #e0e0f7;
-     color: red;
+  background: #e0e0f7;
+  color: red;
 }
 
 .navbar a.navbar-brand {
-  padding: 0 40px;
+  padding: 10px 240px;
   line-height: 20px;
   height: 10px;
   color: #555;
@@ -38,7 +38,6 @@ a:hover {
   right: 17px;
   top: 6px;
   width: 330px;
-
 }
 
 .btn-primary {
@@ -52,7 +51,7 @@ a:hover {
 
 .aside {
   width: 350px;
-  margin-top: 80px;
+  margin-top: 90px;
   background-color: #e0e0f7;
   padding: 5px;
   overflow: scroll;
@@ -73,7 +72,7 @@ a:hover {
 
 .aside-body .items div {
   padding: 2px 4px;
-      background-color: red;
+  background-color: red;
 }
 
 .aside-body .items div:hover {
@@ -82,14 +81,15 @@ a:hover {
 }
 
 .aside .aside-dialog .aside-header {
-  background: #e7e7e7;
-  color: #333;
-  height: 50px;
-  padding: 12px 15px;
+  background: #5a2ce2;
+  color: 	white;
+  height: 30px;
+  padding: 5px;
+  width: 300px;
 }
 
 .aside .aside-dialog .aside-header a {
-  background: ##5F9EA0;
+  background: white;
   margin-right: 5px;
 }
 
@@ -117,7 +117,7 @@ a:hover {
   position: fixed;
   top: 10%;
   left: 18.5%;
-  width: 80%;
+  width: 20%;
   height: fit-content;
   margin-left: -10%;
   background: #fff;
@@ -136,8 +136,8 @@ a:hover {
 #footer {
   height: 40px;
   width: 100%;
- background-color: rgba(255,255,255,.7);
-  position: absolute;
+  background-color: rgba(255,255,255,.7);
+  position: sticky;
   bottom: 0;
 }
 
