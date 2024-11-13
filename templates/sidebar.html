@@ -10,10 +10,10 @@
       </div>    
       
       <div class="aside-body">
-      </div>
-               <ng-show="active.tags['name']"><h3><b><i>{{active.tags['name']}}</i></b></h3> 
-           <div class="aside-section aside-tags">
-             
+
+              <div> <ng-show="active.tags['name']"><h3><b><i>{{active.tags['name']}}</i></b></h3> </div>
+         
+         <div class="aside-section aside-tags">
              <div ng-show="active.tags['wikimedia_commons']">
              <img ng-src="https://commons.wikimedia.org/w/thumb.php?f={{active.tags['wikimedia_commons'].substring(5)}}&w=300" alt="Zdjęcie grobu z Wikimedii">
              </div>
@@ -24,19 +24,25 @@
 
              <div ng-show="active.tags.image">
             <img ng-src="{{active.tags['image']}}" alt="Zdjęcie grobu" width="300">
-             </div>
+          </div>
+               <div class="aside-section aside-header">           
               <b>Location <i>(Lokalizacja)</i>:</b><br>
-          Coordinates (Współrządne): <i>latitude,longitude</i>
+               </div>
+
              <div class="aside-section aside-tags">
+              Coordinates (Współrządne): <i>latitude,longitude</i><br>            
               <div ng-show="active.tags['sector:name']">&mdash; Sector (Sektor): <i>{{active.tags['sector:name']}}</i></div>
               <div ng-show="active.tags['sector:row']">&mdash; Row (Rząd): <i>{{active.tags['sector:row']}}</i></div>
               <div ng-show="active.tags['sector:place']">&mdash; Place (Miejsce): <i>{{active.tags['sector:place']}}</i></div>
             </div>
-            <div ng-show="active.tags['ref']">&mdash; Ref: <i></i>{{active.tags['ref']}}</i></div><p>
+            <div ng-show="active.tags['ref']">Ref: <i>{{active.tags['ref']}}</i></div>
             <div ng-show="active.tags.description"><i>{{active.tags.description}}</i></div>
             
           </div>
-          <hr/>
+
+                <div class="aside-section aside-header">           
+              <b>Buried <i>(Pochowani)</i>:</b><br>
+               </div>
           <div class="aside-section aside-tags">
             <div ng-repeat="person in active.people">
               <h4  ng-hide="person.tags.wikipedia"><b>{{person.name}}</b></h4>
