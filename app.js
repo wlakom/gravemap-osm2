@@ -120,7 +120,7 @@ app.controller('MapCtrl', ['$scope', '$http', '$aside', '$alert', '$modal', func
               b.getNorthWest().lat + ',' + b.getSouthEast().lng + ')';
 
       $scope.busy = true;
-      const query = '[out:json];(rel[name~"^Foo$'+ name +'"][type="person"]' + bbox + ';rel[family_name~"'+ name +'"][type="person"]' + bbox + ';);>>; out;';
+      const query = '[out:json];(rel["name"~"^Foo$'+ name +'"][type="person"]' + bbox + ';rel[family_name~"'+ name +'"][type="person"]' + bbox + ';);>>; out;';
       console.log(query);
       $http({
         method: 'GET',
