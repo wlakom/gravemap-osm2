@@ -12,7 +12,7 @@
       <div class="aside-body">
 
               <div> <ng-show="active.tags['name']"><h3><b><i>{{active.tags['name']}}</i></b></h3> </div>
-         
+              <h6>{{active.tags.religion}} {{active.tags.denomination}}</h6>         
          <div class="aside-section aside-tags">
              <div ng-show="active.tags['wikimedia_commons']">
              <img ng-src="https://commons.wikimedia.org/w/thumb.php?f={{active.tags['wikimedia_commons'].substring(5)}}&w=300" alt="Zdjęcie grobu z Wikimedii">
@@ -48,7 +48,7 @@
               <h4  ng-hide="person.tags.wikipedia"><b>{{person.name}}</b></h4>
               <h4 ng-show="person.tags.wikipedia"><b><a href="https://en.wikipedia.org/wiki/{{person.tags.wikipedia}}" target="_blank">{{person.name}}</a></b></h4>
               <div ng-show="person.tags.family_name">Family Name <i>(Nazwisko rodowe)</i>: {{person.tags.family_name}}</div>
-              
+                <h6>{{person.tags.religion}} {{person.tags.denomination}}</h6>            
               <div ng-show="person.tags['image']">
               <img ng-src="{{person.tags['image']}}" alt="Zdjęcie zmarłego" width="300">
             </div>
