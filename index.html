@@ -14,6 +14,13 @@
   </head>
   <body ng-controller="MapCtrl">
     <div class="navbar navbar-default navbar-fixed-top">
+<span class="navbar-choice">
+  <label for="cars">Language:</label>
+<select id="language">
+  <option value="polski" selected>Polski</option>
+  <option value="english">English</option>
+</select>
+</span>
       <div class="container">
         <div class="navbar-inner">
           <a class="navbar-brand" href=".">OpenStreetMap Grave Finder<br><i>(Wyszukiwarka grobów na <abbr title="OpenStreetMap">OSM)</i></abbr></a>
@@ -24,21 +31,20 @@
           <div class="absolute-right">
             <form ng-submit="search()">
               <div class="input-group">
-                   <input type="text" class="form-control" ng-model="searchText" placeholder="place">
+                <input type="text" class="form-control" ng-model="searchText" placeholder="place">
                 <span class="input-group-btn">
-                   <input type="submit" id="submit" class="btn btn-primary" value="Search by place" /><br>
+                  <input type="submit" id="submit" class="btn btn-primary" value="Search by place" /><br>
                 </span>
               </div>
             </form>
             <form ng-submit="searchGraves()">
             <div class="input-group">
-                    <input id="searchName" type="text" class="form-control" ng-model="searchGrave.nameText" placeholder="name">
+               <input id="searchName" type="text" class="form-control" ng-model="searchGrave.nameText" placeholder="name">
                   <span class="input-group-btn">
-                    <input type="submit" id="submit" class="btn btn-primary" value="Search by name" />
+               <input type="submit" id="submit" class="btn btn-primary" value="Search by name" />
                   </span>
             </div>
           </form>
-
           </div>
         </div>
       </div>
@@ -46,7 +52,7 @@
     <div class="map-container">
       <div id="map"></div>
     </div>
-    <div id="footer">
+     <div id="footer">
       <div class="container">
         <div class="text-muted pull-left"><small>© 2014</small> <a href="https://github.com/yarl">Yarl</a>. 2024 <a href="https://github.com/dotevo">Dotevo</a>. 2024 <a href="https://github.com/wlakom">Wlakom</a> & contributors. Podkład mapowy autorstwa OpenStreetMap, lic. <a href="http://www.openstreetmap.org/copyright">CC-By-SA</a>.</div>
       </div>
