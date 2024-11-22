@@ -14,13 +14,6 @@
   </head>
   <body ng-controller="MapCtrl">
     <div class="navbar navbar-default navbar-fixed-top">
-<span class="navbar-choice">
-  <label for="cars">Language:</label>
-<select id="language">
-  <option value="polski" selected>Polski</option>
-  <option value="english">English</option>
-</select>
-</span>
       <div class="container">
         <div class="navbar-inner">
           <a class="navbar-brand" href=".">OpenStreetMap Grave Finder<br><i>(Wyszukiwarka grobów na <abbr title="OpenStreetMap">OSM)</i></abbr></a>
@@ -28,7 +21,16 @@
           <span ng-show="busy" style="margin-left: 10px;">
             <i class="fa fa-refresh fa-spin" backgroung=red></i> Loading...
           </span>
+          <clear>
           <div class="absolute-right">
+             <div class="navbar-choice">
+                <select id="language">
+                  <option value="polski" selected>Polski</option>
+                  <option value="english">English</option>
+                </select>
+                  <label for="language">Language</label>    
+            </div>
+
             <form ng-submit="search()">
               <div class="input-group">
                 <input type="text" class="form-control" ng-model="searchText" placeholder="place">
