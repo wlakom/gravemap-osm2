@@ -45,6 +45,15 @@ a:hover {
   width: 150px;
 }
 
+.navbar-fixed-top {
+  background: #e0e0f7;
+}
+
+.navbar-choice {
+  height: 40px;
+  width: 300px;
+}
+
 /**
  ASIDE
 **/
