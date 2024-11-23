@@ -9,7 +9,7 @@ a:hover {
 
 #map {
   width: 100%;
-  height: calc(100% - 80px);
+  height: calc(100% - 90px);
   margin-top: 100px;
 }
 
@@ -24,7 +24,7 @@ a:hover {
 }
 
 .navbar a.navbar-brand {
-  padding: 10px 240px;
+  padding: 5px 200px;
   line-height: 20px;
   height: 80px;
   color: #555;
@@ -50,10 +50,9 @@ a:hover {
 }
 
 .navbar-choice {
- line-height: 20px;
+  line-height: 20px;
   color: black;
-   border: solid green;
-margin-left: 180px;
+  margin-left: 200px;
 }
 
 /**
