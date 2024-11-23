@@ -24,11 +24,13 @@
           <clear>
           <div class="absolute-right">
              <div class="navbar-choice">
-                <select id="language">
-                  <option value="pl" selected>Polski</option>
-                  <option value="en">English</option>
+             <select id="language" onchange="ChangeLanguage(this.value);" >
+                  <option class="SelectItem" value="pl" selected>Polski</option>
+                  <option class="SelectItem" value="en">English</option>
                 </select>
-                  <label for="language">Language</label>    
+                <span class="btn-primary">
+                  <label for="language">Language</label>
+                 </span>
             </div>
 
             <form ng-submit="search()">
