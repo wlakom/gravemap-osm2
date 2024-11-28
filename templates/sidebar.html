@@ -47,7 +47,7 @@
             <div ng-repeat="person in active.people">
               <h4  ng-hide="person.tags.wikipedia"><b>{{person.name}}</b></h4>
               <h4 ng-show="person.tags.wikipedia"><b><a href="https://en.wikipedia.org/wiki/{{person.tags.wikipedia}}" target="_blank">{{person.name}}</a></b></h4>
-              <div ng-show="person.tags.family_name">Family Name <i>(Nazwisko rodowe)</i>: {{person.tags.family_name}}</div>
+              <div ng-show="person.tags.family_name">Nee <i>(z.d.)</i>: <b>{{person.tags.family_name}}</b></div>
                 <h6>{{person.tags.religion}} {{person.tags.denomination}}</h6>            
               <div ng-show="person.tags['image']">
               <img ng-src="{{person.tags['image']}}" alt="Zdjęcie zmarłego" width="300">
