@@ -25,12 +25,13 @@
              <div ng-show="active.tags.image">
             <img ng-src="{{active.tags['image']}}" alt="Zdjęcie grobu" width="300">
           </div>
+            <div ng-show="active.tags.description"><i>{{active.tags.description}}</i></div>
                <div class="aside-section aside-header">           
               <b>Location <i>(Lokalizacja)</i>:</b><br>
                </div>
 
              <div class="aside-section aside-tags">
-              Coordinates (Współrządne): <i>latitude,longitude</i><br>            
+              Coordinates (Współrzędne): <i>latitude,longitude</i><br>            
               <div ng-show="active.tags['sector:name']">&mdash; Sector (Sektor): <i>{{active.tags['sector:name']}}</i></div>
               <div ng-show="active.tags['sector:row']">&mdash; Row (Rząd): <i>{{active.tags['sector:row']}}</i></div>
               <div ng-show="active.tags['sector:place']">&mdash; Place (Miejsce): <i>{{active.tags['sector:place']}}</i></div>
