@@ -128,52 +128,63 @@ $scope.loadDataAdv = function(name) {
   });
 };
 
-$scope.parseData = function(data) {
-  const graves = {};
+  $scope.parseData = function(data) {
+      var graves = {};
 
-  data.forEach(item => {
-    if (item.type === 'node') {
-      graves[item.id] = {
-        id: item.id,
-        type: 'node',
-        latlng: [item.lat, item.lon],
-        tags: item.tags,
-        people: []
-      };
-    } else if (item.type === 'way') {
-      const latlngs = item.nodes.map(k => graves[k].latlng);
-      graves[item.id] = {
-        id: item.id,
-        type: 'way',
-        latlngs: latlngs,
-        tags: item.tags,
-        people: []
-      };
-    }
-  });
+      for (var i in data) {
+        var item = data[i];
+        if (item.type === "node")
+          graves[item.id] = {
+            id: item.id,
+            type: "node",
+            latlng: [item.lat, item.lon],
+            tags: item.tags,
+            people: []
+          };
+      }
 
-  data.forEach(item => {
-    if (item.type === 'relation') {
-      const person = {
-        id: item.id,
-        name: item.tags.name,
-        tags: item.tags
-      };
-      item.members.forEach(member => {
-        if (member.role === 'tomb') {
-          graves[member.ref].people.push(person);
+      for (var i in data) {
+        var item = data[i];
+        //2. ways
+        if (item.type === "way") {
+          var latlngs = [];
+          for (var j = 0; j < item.nodes.length; j++) {
+            var k = item.nodes[j];
+            latlngs.push(graves[k].latlng);
+          }
+          graves[item.id] = {
+            id: item.id,
+            type: "way",
+            latlngs: latlngs,
+            tags: item.tags,
+            people: []
+          };
         }
-      });
-    }
-  });
+      }
 
-  $scope.graves.data = graves;
-  $scope.graves.layer.clearLayers();
-  Object.values(graves).forEach(grave => {
-    if (grave.tags) $scope.drawGrave(grave.id);
-  });
-};
+      for (var i in data) {
+        var item = data[i];
+        if (item.type === "relation") {
+          var person = {
+            id: item.id,
+            name: item.tags.name,
+            tags: item.tags,
+          };
 
+          for (var j in item.members) {
+            var member = item.members[j];
+            if (member.role === "tomb")
+              graves[member.ref].people.push(person);
+          }
+        }
+      }
+
+      $scope.graves.data = graves;
+      $scope.graves.layer.clearLayers();
+      for (var i in graves)
+        if (graves[i].tags)
+          $scope.drawGrave(i);
+    };
     /////////////////////////////////////////////////////////////////////////////////// DRAWING ////
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
