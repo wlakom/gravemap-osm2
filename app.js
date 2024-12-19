@@ -79,12 +79,19 @@ $scope.search = function() {
   });
 };
 
-$scope.searchGraves = function() {
-  const searchName = $('#searchName').val();
-  if (searchName) {
-    $scope.loadDataAdv(searchName);
-  } else {
-    alert('Please enter a name to search.');
+$scope.drawGrave = function(id) {
+  const grave = $scope.graves.data[id];
+  if (grave) {
+    const marker = L.marker(grave.latlng).addTo($scope.graves.layer);
+    let popupContent = `<strong>Name:</strong> ${grave.tags.name || 'Unknown'}`;
+    if (grave.people.length) {
+      popupContent += '<br/><strong>People:</strong><ul>';
+      grave.people.forEach(person => {
+        popupContent += `<li>${person.name} (${person.tags['sector:name-N'] || 'N/A'})</li>`;
+      });
+      popupContent += '</ul>';
+    }
+    marker.bindPopup(popupContent);
   }
 };
 
@@ -159,13 +166,26 @@ $scope.parseData = function(data) {
         name: item.tags.name,
         tags: item.tags
       };
+
       item.members.forEach(member => {
         if (member.role === 'tomb') {
-          graves[member.ref].people.push(person);
+          if (graves[member.ref]) {
+            graves[member.ref].people.push(person);
+          } else {
+            console.warn(`Grave with ID ${member.ref} not found.`);
+          }
         }
       });
     }
   });
+
+  console.log(graves); // Log the parsed graves to inspect the data
+  $scope.graves.data = graves;
+  $scope.graves.layer.clearLayers();
+  Object.values(graves).forEach(grave => {
+    if (grave.tags) $scope.drawGrave(grave.id);
+  });
+};
 
   $scope.graves.data = graves;
   $scope.graves.layer.clearLayers();
