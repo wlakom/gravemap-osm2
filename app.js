@@ -159,26 +159,13 @@ $scope.parseData = function(data) {
         name: item.tags.name,
         tags: item.tags
       };
-
       item.members.forEach(member => {
         if (member.role === 'tomb') {
-          if (graves[member.ref]) {
-            graves[member.ref].people.push(person);
-          } else {
-            console.warn(`Grave with ID ${member.ref} not found.`);
-          }
+          graves[member.ref].people.push(person);
         }
       });
     }
   });
-
-  console.log(graves); // Log the parsed graves to inspect the data
-  $scope.graves.data = graves;
-  $scope.graves.layer.clearLayers();
-  Object.values(graves).forEach(grave => {
-    if (grave.tags) $scope.drawGrave(grave.id);
-  });
-};
 
   $scope.graves.data = graves;
   $scope.graves.layer.clearLayers();
