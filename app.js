@@ -79,19 +79,12 @@ $scope.search = function() {
   });
 };
 
-$scope.drawGrave = function(id) {
-  const grave = $scope.graves.data[id];
-  if (grave) {
-    const marker = L.marker(grave.latlng).addTo($scope.graves.layer);
-    let popupContent = `<strong>Name:</strong> ${grave.tags.name || 'Unknown'}`;
-    if (grave.people.length) {
-      popupContent += '<br/><strong>People:</strong><ul>';
-      grave.people.forEach(person => {
-        popupContent += `<li>${person.name} (${person.tags['sector:name-N'] || 'N/A'})</li>`;
-      });
-      popupContent += '</ul>';
-    }
-    marker.bindPopup(popupContent);
+$scope.searchGraves = function() {
+  const searchName = $('#searchName').val();
+  if (searchName) {
+    $scope.loadDataAdv(searchName);
+  } else {
+    alert('Please enter a name to search.');
   }
 };
 
