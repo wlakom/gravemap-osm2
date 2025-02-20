@@ -60,6 +60,7 @@
              <div ng-show="person.tags.flickr">
              <img ng-src="{{person.tags['flickr']}}" alt="Zdjęcie zmarłego z Flickr" width="300"> 
              </div>
+                <div ng-show="person.tags.inscription"><b>{{person.tags.inscription}}</b></div>
                 <div ng-show="person.tags.description"><i>{{person.tags.description}}</i></div>
               <div>{{person.tags.born ? person.tags.born : '??'}} &mdash; {{person.tags.died ? person.tags.died : '??'}}</div>
               <div ng-show="person.tags.birthplace">Birthplace <i>(Miejsce urodzenia)</i>: <i>{{person.tags.birthplace}}</i></div>
